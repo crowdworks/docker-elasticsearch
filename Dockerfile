@@ -6,3 +6,6 @@ RUN plugin install analysis-icu && \
     plugin install lmenezes/elasticsearch-kopf
 
 COPY config/elasticsearch.yml /usr/share/elasticsearch/config
+
+RUN mkdir -p /var/opt/elasticsearch/backups && \
+    chown -R elasticsearch:elasticsearch /var/opt/elasticsearch
