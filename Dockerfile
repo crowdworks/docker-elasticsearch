@@ -1,6 +1,6 @@
-FROM docker.elastic.co/elasticsearch/elasticsearch:5.6.10
+FROM docker.elastic.co/elasticsearch/elasticsearch-oss:6.8.7
 
-# Install the plugins and uninstall X-Pack
 RUN elasticsearch-plugin install analysis-kuromoji && \
-    elasticsearch-plugin install analysis-icu && \
-    elasticsearch-plugin remove x-pack
+    elasticsearch-plugin install analysis-icu
+
+USER elasticsearch
